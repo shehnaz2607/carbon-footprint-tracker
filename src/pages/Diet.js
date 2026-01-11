@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Diet() {
   const [veg, setVeg] = useState(0);
@@ -7,29 +8,34 @@ function Diet() {
   const navigate = useNavigate();
 
   const calculate = () => {
-    const emission = (veg * 1.2) + (nonVeg * 2.5);
+    const emission = veg * 1.2 + nonVeg * 2.5;
     localStorage.setItem("diet", emission);
     navigate("/energy");
   };
 
   return (
-    <div className="container">
-      <h2>Diet Emissions</h2>
+    <motion.div
+      className="container"
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h2>Diet Emissions 🍽️</h2>
 
       <input
         type="number"
         placeholder="Veg meals per week"
-        onChange={(e) => setVeg(e.target.value)}
+        onChange={(e) => setVeg(Number(e.target.value))}
       />
 
       <input
         type="number"
         placeholder="Non-veg meals per week"
-        onChange={(e) => setNonVeg(e.target.value)}
+        onChange={(e) => setNonVeg(Number(e.target.value))}
       />
 
       <button onClick={calculate}>Next</button>
-    </div>
+    </motion.div>
   );
 }
 
