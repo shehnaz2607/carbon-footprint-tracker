@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/carbon-footprint-tracker/static/css/main.8ac25ab5.css",
-    "main.js": "/carbon-footprint-tracker/static/js/main.dd7a96b9.js",
+    "main.css": "/carbon-footprint-tracker/static/css/main.f9a1a981.css",
+    "main.js": "/carbon-footprint-tracker/static/js/main.5ac2bef7.js",
     "static/js/239.2b16fb65.chunk.js": "/carbon-footprint-tracker/static/js/239.2b16fb65.chunk.js",
     "static/js/977.9facb70f.chunk.js": "/carbon-footprint-tracker/static/js/977.9facb70f.chunk.js",
-    "static/js/455.f84e59c6.chunk.js": "/carbon-footprint-tracker/static/js/455.f84e59c6.chunk.js",
+    "static/js/455.c7961dff.chunk.js": "/carbon-footprint-tracker/static/js/455.c7961dff.chunk.js",
     "static/js/453.4c9f4a47.chunk.js": "/carbon-footprint-tracker/static/js/453.4c9f4a47.chunk.js",
     "index.html": "/carbon-footprint-tracker/index.html",
-    "main.8ac25ab5.css.map": "/carbon-footprint-tracker/static/css/main.8ac25ab5.css.map",
-    "main.dd7a96b9.js.map": "/carbon-footprint-tracker/static/js/main.dd7a96b9.js.map",
+    "main.f9a1a981.css.map": "/carbon-footprint-tracker/static/css/main.f9a1a981.css.map",
+    "main.5ac2bef7.js.map": "/carbon-footprint-tracker/static/js/main.5ac2bef7.js.map",
     "239.2b16fb65.chunk.js.map": "/carbon-footprint-tracker/static/js/239.2b16fb65.chunk.js.map",
     "977.9facb70f.chunk.js.map": "/carbon-footprint-tracker/static/js/977.9facb70f.chunk.js.map",
-    "455.f84e59c6.chunk.js.map": "/carbon-footprint-tracker/static/js/455.f84e59c6.chunk.js.map",
+    "455.c7961dff.chunk.js.map": "/carbon-footprint-tracker/static/js/455.c7961dff.chunk.js.map",
     "453.4c9f4a47.chunk.js.map": "/carbon-footprint-tracker/static/js/453.4c9f4a47.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ac25ab5.css",
-    "static/js/main.dd7a96b9.js"
+    "static/css/main.f9a1a981.css",
+    "static/js/main.5ac2bef7.js"
   ]
 }
