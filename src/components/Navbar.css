@@ -1,0 +1,39 @@
+.top-bar {
+  background: #ffffff;
+  padding: 8px 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.top-bar a {
+  color: green;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar {
+  background: #148a08;
+  padding: 14px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-left: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
