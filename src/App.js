@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-
 import Home from "./pages/Home";
 import Transport from "./pages/Transport";
 import Diet from "./pages/Diet";
@@ -8,7 +7,8 @@ import Energy from "./pages/Energy";
 import Result from "./pages/Result";
 import Information from "./pages/Information";
 import About from "./pages/About";
-
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import "./App.css";
 
 function App() {
@@ -23,6 +23,8 @@ function App() {
         <Route path="/result" element={<Result />} />
         <Route path="/info" element={<Information />} />
         <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );

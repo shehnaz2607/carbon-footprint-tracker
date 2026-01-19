@@ -1,28 +1,63 @@
-import { Link } from "react-router-dom";
-import "./Navbar.css";
+import { Link, useNavigate  } from "react-router-dom";
 
 function Navbar() {
-  return (
-    <>
-      {/* Top Contact Bar */}
-      <div className="top-bar">
-        <span className="auth-links">
-          You are not logged in&nbsp;
-          <Link to="#">Log In</Link> / <Link to="#">Create Account</Link>
-        </span>
-      </div>
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
-      {/* Main Navigation */}
-      <nav className="navbar">
-        <Link to="/" className="logo">🌱 Carbon Tracker</Link>
-        <div className="nav-links">
-          <Link to="/">CARBON CALCULATIONS</Link>
-          <Link to="/info">INFORMATION</Link>
-          <Link to="/about">ABOUT US</Link>
-        </div>
-      </nav>
-    </>
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+    window.location.reload(); // refresh UI state
+  };
+
+  return (
+    <div style={styles.navbar}>
+      <h3 style={styles.logo}>🌱 Carbon Tracker</h3>
+
+      <div style={styles.links}>
+        <Link to="/" style={styles.link}>Home</Link>
+        <Link to="/transport" style={styles.link}>Calculations</Link>
+        <Link to="/info" style={styles.link}>Information</Link>
+        <Link to="/about" style={styles.link}>About</Link>
+
+        {!token ? (
+          <>
+            <Link to="/login" style={styles.link}>Login</Link>
+            <Link to="/register" style={styles.link}>Create Account</Link>
+          </>
+        ) : (
+          <button onClick={logout} style={styles.logout}>Logout</button>
+        )}
+      </div>
+    </div>
   );
 }
 
+const styles = {
+  navbar: {
+    background: "#0f7c0f",
+    padding: "15px 30px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    color: "white"
+  },
+  logo: { 
+    margin: 0,
+    color: "white",
+    fontSize: "20px",
+    fontWeight: "bold",
+    textDecoration: "none"
+  },
+  links: { display: "flex", gap: "20px", alignItems: "center" },
+  link: { color: "white", textDecoration: "none", fontWeight: "bold", marginLeft: "30px" },
+  logout: {
+    background: "#fff",
+    color: "#0f7c0f",
+    border: "none",
+    padding: "6px 12px",
+    cursor: "pointer",
+    fontWeight: "bold"
+  }
+};
 export default Navbar;

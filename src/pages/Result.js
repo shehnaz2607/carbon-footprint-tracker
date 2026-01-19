@@ -1,6 +1,6 @@
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import jsPDF from "jspdf";
+import { jsPDF } from "jspdf";
 import { motion } from "framer-motion";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -20,19 +20,31 @@ function Result() {
     datasets: [
       {
         data: [transport, diet, energy],
-        backgroundColor: ["#4CAF50", "#FF9800", "#2196F3"],
+        backgroundColor: ["#0e9e13", "#FF9800", "#2196F3"],
       },
     ],
   };
 
   const downloadPDF = () => {
-    const pdf = new jsPDF();
-    pdf.text("Carbon Footprint Report", 20, 20);
-    pdf.text(`Transport: ${transport.toFixed(2)} kg CO₂`, 20, 40);
-    pdf.text(`Diet: ${diet.toFixed(2)} kg CO₂`, 20, 50);
-    pdf.text(`Energy: ${energy.toFixed(2)} kg CO₂`, 20, 60);
-    pdf.text(`Total: ${total.toFixed(2)} kg CO₂`, 20, 80);
-    pdf.save("carbon-footprint-report.pdf");
+     const doc = new jsPDF();
+
+    // Title
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(18);
+    doc.text("Carbon Footprint Report", 20, 20);
+
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "normal");
+
+    // Content (ASCII-safe text)
+    doc.text(`Transport Emissions : ${transport} kg CO2`, 20, 40);
+    doc.text(`Diet Emissions      : ${diet} kg CO2`, 20, 50);
+    doc.text(`Energy Emissions    : ${energy} kg CO2`, 20, 60);
+
+    doc.setFont("helvetica", "bold");
+    doc.text(`Total Carbon Footprint : ${total.toFixed(2)} kg CO2`, 20, 80);
+
+    doc.save("carbon-footprint-report.pdf");
   };
 
   return (
